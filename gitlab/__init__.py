@@ -179,7 +179,7 @@ class Gitlab(object):
         The `user` attribute will hold a `gitlab.objects.CurrentUser` object on
         success.
         """
-        if self.private_token:
+        if self.private_token or self.oauth_token:
             self._token_auth()
         else:
             self._credentials_auth()
